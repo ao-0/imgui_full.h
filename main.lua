@@ -1,6 +1,7 @@
 -- Creating UI Elements
 local Elements = Instance.new("Folder")
 do
+	local elements = Elements
 	local holder = Instance.new("ScrollingFrame")
 	holder.Name = "Holder"
 	holder.CanvasSize = UDim2.new()
