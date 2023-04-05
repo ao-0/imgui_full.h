@@ -39,5 +39,5 @@ fuck:Toggle("I really can")
 
 local graph = Main:Graph("Times i wank my dick", 0)
 local data = {1,2,3,2,4,3}
-graph:render(data, nil, 4)
+graph:render(data, nil, 20)
 ```
