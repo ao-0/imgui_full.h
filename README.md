@@ -1,6 +1,9 @@
 # rogui
 imgui like roblox ui lib
 
+# warning
+the graph feature is in an very beta stage, gotta fix plenty of stuff
+
 # example
 ```lua
 local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/loglizzy/rogui/main/main.min.lua"))()
