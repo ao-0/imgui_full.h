@@ -651,6 +651,7 @@ function newFolder(self, name, open)
 	new.Holder.Visible = open
 	new.Index.Visible = open
 	new.drop.icon.Image = (open and Images.drop_open) or Images.drop_close
+	upt()
 	
 	new.Holder.ChildAdded:Connect(function(v)
 		local idx = Elements.Folder.ListIndex:Clone()
