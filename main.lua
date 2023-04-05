@@ -359,7 +359,7 @@ do
     
     local top = Instance.new("Frame")
     top.Name = "Top"
-    top.BackgroundColor3 = Color3.fromRGB(29, 52, 85)
+    top.BackgroundColor3 = Color3.fromRGB(39, 62, 95)
     top.BorderSizePixel = 0
     top.Size = UDim2.new(1, 0, 0, 20)
     
@@ -489,6 +489,8 @@ do
     
     window.Parent = Elements
     
+    local UserInputService = game:GetService("UserInputService")
+    
     function makeDraggable(gui)
         local dragging
         local dragInput
@@ -531,6 +533,7 @@ do
 end
 
 local TextService = game:GetService("TextService")
+
 local Images = {
 	drop_open = "rbxassetid://10161684720",
 	drop_close = "rbxassetid://10161686086"
@@ -681,7 +684,7 @@ function graphRender(self, data, prefix, double, decimals)
 	decimals = (decimals and 10^decimals) or 100
 	
 	local max
-	for i, v in data do
+	for i, v in next, data do
 		if not max or v > max then
 			max = v
 		end
@@ -738,7 +741,7 @@ function graphRender(self, data, prefix, double, decimals)
 	end
 	
 	self.obj.Time.UIGridLayout.CellSize = UDim2.new(1/#data, 0, 1, 0)
-	for i, v in data do
+	for i, v in next, data do
 		local new = self.obj.Checkpoint:Clone()
 		new.Visible = true
 		new.Text = tostring(i)..(prefix or "")
@@ -752,7 +755,7 @@ function graphRender(self, data, prefix, double, decimals)
 	
 	if double then
 		local rep = {}
-		for i,v in data do
+		for i,v in next, data do
 			table.insert(rep, v)
 			local at = data[i + 1]
 			if at then
@@ -768,7 +771,7 @@ function graphRender(self, data, prefix, double, decimals)
 	
 	local dec = (1/#data)
 	local pad = -self.obj.Holder.UIListLayout.Padding.Offset
-	for i, v in data do
+	for i, v in next, data do
 		local new = Elements.Graph.Bar:Clone()
 		new.Visible = true
 		new.Size = UDim2.new(dec, pad, v/max, 0)
@@ -807,14 +810,19 @@ end
 function new(title, size, parent)
 	local window = Elements.Window:Clone()
 	window.Top.Title.Text = title
+	
 	if size then
 		window.Size = size
 	end
 	
-	window.Parent = parent or game.CoreGui:FindFirstChildOfClass("ScreenGui")
-	
 	local protect = (syn and syn.protect_gui) or protect_gui
-	protect(window.Parent)
+	parent = parent or game.CoreGui:FindFirstChildOfClass("ScreenGui")
+	if protect then
+	    protect(parent)
+	end
+	
+	makeDraggable(window)
+	window.Parent = parent
 	
 	return {
 		obj = window,
