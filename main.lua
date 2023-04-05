@@ -531,9 +531,6 @@ do
 end
 
 local TextService = game:GetService("TextService")
-
-local Elements = script.Elements
-
 local Images = {
 	drop_open = "rbxassetid://10161684720",
 	drop_close = "rbxassetid://10161686086"
