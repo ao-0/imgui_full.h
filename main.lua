@@ -1,5 +1,16 @@
 local Elements = Instance.new("Folder")
 do
+    local panel = Instance.new("Frame", Elements)
+    panel.Name = "Panel"
+    panel.Size = UDim2.new(1, 0, 0, 80)
+    panel.BackgroundTransparency = 1
+    
+    local uIGridLayout = Instance.new("UIGridLayout", panel)
+    uIGridLayout.Name = "UIGridLayout"
+    uIGridLayout.CellPadding = UDim2.new()
+    uIGridLayout.CellSize = UDim2.fromScale(1, 0)
+    uIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    
     local toggle = Instance.new("Frame")
     toggle.Name = "Toggle"
     toggle.BackgroundColor3 = Color3.fromRGB(35, 62, 93)
@@ -775,7 +786,8 @@ function newTab(self, name)
 		Button = newButton,
 		Folder = newFolder,
 		Graph = newGraph,
-		Label = newLabel
+		Label = newLabel,
+		Panel = newPanel
 	}
 end
 
@@ -1048,6 +1060,53 @@ function newLabel(self, content)
     return new
 end
 
+function newPanel(self, data)
+    local num = data.cells or 2
+    data.cells = num
+    
+    local new = Elements.Panel:Clone()
+    new.UIGridLayout.CellSize = UDim2.new(1/num, 0, 1, 0)
+    if data.padding then
+        new.UIGridLayout.CellPadding = data.padding
+    end
+    
+    new.Parent = self.holder
+    
+    local childs = {}
+    for i = 1, num do
+        local c = Elements.Holder:Clone()
+        c.Parent = new
+        
+        childs[i] = {
+            holder = c,
+		    Toggle = newToggle,
+		    Button = newButton,
+		    Folder = newFolder,
+		    Label = newLabel
+		}
+    end
+    
+    function upt(v)
+        local num = 0
+        for i, v in next, childs do
+            num = math.max(num, v.holder.UIListLayout.AbsoluteContentSize.Y)
+        end
+        
+        new.Size = UDim2.new(1, 0, 0, num)
+        
+        if v then
+            v:GetPropertyChangedSignal("Size"):Connect(upt)
+        end
+    end
+    
+    upt()
+    for i, v in next, childs do
+        v.holder.ChildAdded:Connect(upt)
+    end
+    
+    return childs
+end
+
 -- Constructor
 function new(title, size, parent)
 	local window = Elements.Window:Clone()
@@ -1071,7 +1130,3 @@ function new(title, size, parent)
 		Tab = newTab
 	}
 end
-
-return {
-    new = new
-}
