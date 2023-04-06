@@ -1,7 +1,5 @@
 local Elements = Instance.new("Folder")
 do
-    Elements.Name = "Elements"
-    
     local toggle = Instance.new("Frame")
     toggle.Name = "Toggle"
     toggle.BackgroundColor3 = Color3.fromRGB(35, 62, 93)
@@ -226,7 +224,7 @@ do
     holder1.Name = "Holder"
     holder1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     holder1.BackgroundTransparency = 1
-    holder1.Size = UDim2.new(1, 0, 1, -20)
+    holder1.Size = UDim2.new(1, 0, 1, -40)
     
     local uIGridLayout = Instance.new("UIGridLayout")
     uIGridLayout.Name = "UIGridLayout"
@@ -381,23 +379,227 @@ do
     
     graph.Parent = Elements
     
+    local dropdown = Instance.new("TextBox")
+    dropdown.Name = "Dropdown"
+    dropdown.Text = ""
+    dropdown.TextEditable = false
+    dropdown.AnchorPoint = Vector2.new(0.5, 0)
+    dropdown.BackgroundColor3 = Color3.fromRGB(37, 57, 88)
+    dropdown.BorderSizePixel = 0
+    dropdown.Position = UDim2.new(0.5, 0, 0, 22)
+    dropdown.Selectable = false
+    dropdown.Size = UDim2.new(0.5, 0, 0, 14)
+    
+    local drop1 = Instance.new("ImageButton")
+    drop1.Name = "drop"
+    drop1.ImageRectOffset = Vector2.new(324, 524)
+    drop1.ImageRectSize = Vector2.new(36, 36)
+    drop1.AnchorPoint = Vector2.new(1, 0)
+    drop1.BackgroundColor3 = Color3.fromRGB(43, 67, 103)
+    drop1.BorderSizePixel = 0
+    drop1.Position = UDim2.fromScale(1, 0)
+    drop1.Size = UDim2.fromOffset(14, 14)
+    
+    local icon2 = Instance.new("ImageLabel")
+    icon2.Name = "icon"
+    icon2.Image = "rbxassetid://10161673666"
+    icon2.AnchorPoint = Vector2.new(0.5, 0.5)
+    icon2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    icon2.BackgroundTransparency = 1
+    icon2.Position = UDim2.fromScale(0.5, 0.5)
+    icon2.Size = UDim2.fromOffset(7, 7)
+    icon2.Parent = drop1
+    
+    drop1.Parent = dropdown
+    
+    local input = Instance.new("TextBox")
+    input.Name = "input"
+    input.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json")
+    input.Text = "Wet"
+    input.TextColor3 = Color3.fromRGB(227, 227, 227)
+    input.TextSize = 11
+    input.TextXAlignment = Enum.TextXAlignment.Left
+    input.Active = false
+    input.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    input.BackgroundTransparency = 1
+    input.ClipsDescendants = true
+    input.Position = UDim2.fromOffset(4, 0)
+    input.Selectable = false
+    input.Size = UDim2.new(1, -8, 1, 0)
+    input.AutoLocalize = false
+    input.Parent = dropdown
+    
+    local label2 = Instance.new("TextLabel")
+    label2.Name = "label"
+    label2.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json")
+    label2.Text = "Pussy type"
+    label2.TextColor3 = Color3.fromRGB(241, 241, 241)
+    label2.TextSize = 11
+    label2.TextXAlignment = Enum.TextXAlignment.Left
+    label2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    label2.BackgroundTransparency = 1
+    label2.Position = UDim2.new(1, 4, 0, 0)
+    label2.Size = UDim2.new(1, -4, 1, 0)
+    label2.Parent = dropdown
+    
     local holder3 = Instance.new("ScrollingFrame")
-    holder3.Name = "Holder"
-    holder3.CanvasSize = UDim2.new()
-    holder3.ScrollBarThickness = 4
-    holder3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    holder3.BackgroundTransparency = 1
+    holder3.Name = "holder"
+    holder3.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
+    holder3.Active = true
+    holder3.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    holder3.BackgroundTransparency = 0.1
     holder3.BorderSizePixel = 0
-    holder3.Position = UDim2.fromOffset(4, 36)
-    holder3.Size = UDim2.new(1, -8, 1, -36)
+    holder3.Position = UDim2.fromScale(0, 1)
+    holder3.Size = UDim2.new(1, 0, 0, 56)
     
     local uIListLayout3 = Instance.new("UIListLayout")
     uIListLayout3.Name = "UIListLayout"
-    uIListLayout3.Padding = UDim.new(0, 2)
+    uIListLayout3.HorizontalAlignment = Enum.HorizontalAlignment.Center
     uIListLayout3.SortOrder = Enum.SortOrder.LayoutOrder
     uIListLayout3.Parent = holder3
     
-    holder3.Parent = Elements
+    local option = Instance.new("ImageButton")
+    option.Name = "option"
+    option.Active = false
+    option.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+    option.BorderSizePixel = 0
+    option.ClipsDescendants = true
+    option.Position = UDim2.fromOffset(4, 0)
+    option.Selectable = false
+    option.Size = UDim2.new(1, 0, 0, 14)
+    option.AutoLocalize = false
+    
+    local label3 = Instance.new("TextLabel")
+    label3.Name = "label"
+    label3.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json")
+    label3.Text = "Idk"
+    label3.TextColor3 = Color3.fromRGB(140, 140, 140)
+    label3.TextSize = 11
+    label3.TextXAlignment = Enum.TextXAlignment.Left
+    label3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    label3.BackgroundTransparency = 1
+    label3.Position = UDim2.fromOffset(4, 0)
+    label3.Size = UDim2.new(1, -4, 1, 0)
+    label3.Parent = option
+    
+    option.Parent = holder3
+    
+    local option1 = Instance.new("ImageButton")
+    option1.Name = "option"
+    option1.Active = false
+    option1.BackgroundColor3 = Color3.fromRGB(55, 90, 131)
+    option1.BorderSizePixel = 0
+    option1.ClipsDescendants = true
+    option1.Position = UDim2.fromOffset(4, 0)
+    option1.Selectable = false
+    option1.Size = UDim2.new(1, 0, 0, 14)
+    option1.AutoLocalize = false
+    
+    local label4 = Instance.new("TextLabel")
+    label4.Name = "label"
+    label4.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json")
+    label4.Text = "Wet"
+    label4.TextColor3 = Color3.fromRGB(238, 238, 238)
+    label4.TextSize = 11
+    label4.TextXAlignment = Enum.TextXAlignment.Left
+    label4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    label4.BackgroundTransparency = 1
+    label4.Position = UDim2.fromOffset(4, 0)
+    label4.Size = UDim2.new(1, -4, 1, 0)
+    label4.Parent = option1
+    
+    option1.Parent = holder3
+    
+    local option2 = Instance.new("ImageButton")
+    option2.Name = "option"
+    option2.Active = false
+    option2.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+    option2.BorderSizePixel = 0
+    option2.ClipsDescendants = true
+    option2.Position = UDim2.fromOffset(4, 0)
+    option2.Selectable = false
+    option2.Size = UDim2.new(1, 0, 0, 14)
+    option2.AutoLocalize = false
+    
+    local label5 = Instance.new("TextLabel")
+    label5.Name = "label"
+    label5.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json")
+    label5.Text = "Go fuck"
+    label5.TextColor3 = Color3.fromRGB(140, 140, 140)
+    label5.TextSize = 11
+    label5.TextXAlignment = Enum.TextXAlignment.Left
+    label5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    label5.BackgroundTransparency = 1
+    label5.BorderSizePixel = 0
+    label5.Position = UDim2.fromOffset(4, 0)
+    label5.Size = UDim2.new(1, -4, 1, 0)
+    label5.Parent = option2
+    
+    option2.Parent = holder3
+    
+    local option3 = Instance.new("ImageButton")
+    option3.Name = "option"
+    option3.Active = false
+    option3.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+    option3.BorderSizePixel = 0
+    option3.ClipsDescendants = true
+    option3.Position = UDim2.fromOffset(4, 0)
+    option3.Selectable = false
+    option3.Size = UDim2.new(1, 0, 0, 14)
+    option3.AutoLocalize = false
+    
+    local label6 = Instance.new("TextLabel")
+    label6.Name = "label"
+    label6.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json")
+    label6.Text = "Yourself"
+    label6.TextColor3 = Color3.fromRGB(140, 140, 140)
+    label6.TextSize = 11
+    label6.TextXAlignment = Enum.TextXAlignment.Left
+    label6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    label6.BackgroundTransparency = 1
+    label6.Position = UDim2.fromOffset(4, 0)
+    label6.Size = UDim2.new(1, -4, 1, 0)
+    label6.Parent = option3
+    
+    option3.Parent = holder3
+    
+    holder3.Parent = dropdown
+    
+    dropdown.Parent = Elements
+    
+    local label7 = Instance.new("TextLabel")
+    label7.Name = "Label"
+    label7.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json")
+    label7.RichText = true
+    label7.Text = "Whitelist"
+    label7.TextColor3 = Color3.fromRGB(227, 227, 227)
+    label7.TextSize = 11
+    label7.TextXAlignment = Enum.TextXAlignment.Left
+    label7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    label7.BackgroundTransparency = 1
+    label7.ClipsDescendants = true
+    label7.Position = UDim2.fromOffset(4, 0)
+    label7.Size = UDim2.new(1, -8, 0, 14)
+    label7.AutoLocalize = false
+    label7.Parent = Elements
+    
+    local holder4 = Instance.new("ScrollingFrame")
+    holder4.Name = "Holder"
+    holder4.CanvasSize = UDim2.new()
+    holder4.ScrollBarThickness = 4
+    holder4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    holder4.BackgroundTransparency = 1
+    holder4.BorderSizePixel = 0
+    holder4.Position = UDim2.fromOffset(4, 36)
+    holder4.Size = UDim2.new(1, -8, 1, -36)
+    
+    local uIListLayout4 = Instance.new("UIListLayout")
+    uIListLayout4.Name = "UIListLayout"
+    uIListLayout4.Padding = UDim.new(0, 2)
+    uIListLayout4.SortOrder = Enum.SortOrder.LayoutOrder
+    uIListLayout4.Parent = holder4
+    
+    holder4.Parent = Elements
     
     local window = Instance.new("Frame")
     window.Name = "Window"
@@ -440,25 +642,25 @@ do
     title1.Size = UDim2.new(1, -18, 0, 16)
     title1.Parent = top1
     
-    local drop1 = Instance.new("ImageButton")
-    drop1.Name = "Drop"
-    drop1.AnchorPoint = Vector2.new(0, 0.5)
-    drop1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    drop1.BackgroundTransparency = 1
-    drop1.Position = UDim2.fromScale(0, 0.5)
-    drop1.Size = UDim2.fromOffset(18, 16)
+    local drop2 = Instance.new("ImageButton")
+    drop2.Name = "Drop"
+    drop2.AnchorPoint = Vector2.new(0, 0.5)
+    drop2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    drop2.BackgroundTransparency = 1
+    drop2.Position = UDim2.fromScale(0, 0.5)
+    drop2.Size = UDim2.fromOffset(18, 16)
     
-    local icon2 = Instance.new("ImageLabel")
-    icon2.Name = "icon"
-    icon2.Image = "rbxassetid://1248849582"
-    icon2.AnchorPoint = Vector2.new(0.5, 0.5)
-    icon2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    icon2.BackgroundTransparency = 1
-    icon2.Position = UDim2.fromScale(0.5, 0.5)
-    icon2.Size = UDim2.fromOffset(8, 6)
-    icon2.Parent = drop1
+    local icon3 = Instance.new("ImageLabel")
+    icon3.Name = "icon"
+    icon3.Image = "rbxassetid://1248849582"
+    icon3.AnchorPoint = Vector2.new(0.5, 0.5)
+    icon3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    icon3.BackgroundTransparency = 1
+    icon3.Position = UDim2.fromScale(0.5, 0.5)
+    icon3.Size = UDim2.fromOffset(8, 6)
+    icon3.Parent = drop2
     
-    drop1.Parent = top1
+    drop2.Parent = top1
     
     top1.Parent = window
     
@@ -469,12 +671,12 @@ do
     tabs.Position = UDim2.fromOffset(0, 16)
     tabs.Size = UDim2.new(1, 0, 0, 16)
     
-    local uIListLayout4 = Instance.new("UIListLayout")
-    uIListLayout4.Name = "UIListLayout"
-    uIListLayout4.FillDirection = Enum.FillDirection.Horizontal
-    uIListLayout4.SortOrder = Enum.SortOrder.LayoutOrder
-    uIListLayout4.VerticalAlignment = Enum.VerticalAlignment.Center
-    uIListLayout4.Parent = tabs
+    local uIListLayout5 = Instance.new("UIListLayout")
+    uIListLayout5.Name = "UIListLayout"
+    uIListLayout5.FillDirection = Enum.FillDirection.Horizontal
+    uIListLayout5.SortOrder = Enum.SortOrder.LayoutOrder
+    uIListLayout5.VerticalAlignment = Enum.VerticalAlignment.Center
+    uIListLayout5.Parent = tabs
     
     tabs.Parent = window
     
@@ -486,7 +688,7 @@ do
     local containers = Instance.new("Folder")
     containers.Name = "Containers"
     containers.Parent = window
-    
+
     window.Parent = Elements
     
     local UserInputService = game:GetService("UserInputService")
@@ -572,12 +774,13 @@ function newTab(self, name)
 		Toggle = newToggle,
 		Button = newButton,
 		Folder = newFolder,
-		Graph = newGraph
+		Graph = newGraph,
+		Label = newLabel
 	}
 end
 
 -- Tab
-function newToggle(self, content, callback, state, auto)
+function newToggle(self, content, callback, state)
 	local toggle = {
 		state = state,
 		content = content,
@@ -592,17 +795,17 @@ function newToggle(self, content, callback, state, auto)
 	icon.Visible = state or false
 	
 	new.State.Activated:Connect(function()		
-		local now = not self.state
-		self.state = now
+		local now = not toggle.state
+		toggle.state = now
 		
 		icon.Visible = now
 		if callback then
-			task.spawn(callback, self, state)
+			task.spawn(callback, toggle, now)
 		end
 	end)
 	
 	if state then
-		task.spawn(callback, self, state)
+		task.spawn(callback, toggle, state)
 	end
 	
 	return toggle
@@ -633,14 +836,25 @@ function newFolder(self, name, open)
 	new.Label.Text = name
 	new.Parent = self.holder
 	
+    local folder = {
+		obj = new,
+		holder = new.Holder,
+		open = open,
+		
+		Toggle = newToggle,
+		Button = newButton,
+		Folder = newFolder,
+		Label = newLabel
+	}
+	
 	local list = new.Holder.UIListLayout
 	local function upt()
-		new.Size = UDim2.new(1, 0, 0, 14 + ((self.open and list.AbsoluteContentSize.Y) or -2))
+		new.Size = UDim2.new(1, 0, 0, 14 + ((folder.open and list.AbsoluteContentSize.Y) or -2))
 	end
 	
 	new.drop.Activated:Connect(function()
-		local now = not self.open
-		self.open = now
+		local now = not folder.open
+		folder.open = now
 		
 		new.Holder.Visible = now
 		new.Index.Visible = now
@@ -668,32 +882,35 @@ function newFolder(self, name, open)
 		idx.Hide.Visible = true
 		
 		v:GetPropertyChangedSignal("Size"):Connect(upt)
+		
+		task.wait()
+		if folder.open then
+		    upt()
+		end
 	end)
 	
-	return {
-		obj = new,
-		holder = new.Holder,
-		open = open,
-		
-		Toggle = newToggle,
-		Button = newButton,
-		Folder = newFolder,
-	}
+	return folder
 end
 
 function graphRender(self, data, prefix, double, decimals)
 	decimals = (decimals and 10^decimals) or 100
 	
-	local max
+	local max, min, mid
 	for i, v in next, data do
 		if not max or v > max then
 			max = v
 		end
+		
+		if not min or v < min then
+		    min = v
+		end
 	end
+	
+	mid = max-min
 	
 	local frm = self.obj.Index.Holder.AbsoluteSize.Y/20
 	self.obj.Index.Holder.UIGridLayout.CellSize = UDim2.new(1, 0, 1/frm, 0)
-	self.obj.Lines.UIGridLayout.CellSize = UDim2.new(1, 0, 1/frm, 0)
+	self.obj.Lines.UIGridLayout.CellSize = UDim2.new(1, 0, 0, 20)
 	
 	local tbl = self.obj.Index.Holder:GetChildren()
 	for i = 2, #tbl do
@@ -711,21 +928,22 @@ function graphRender(self, data, prefix, double, decimals)
 	end
 	
 	for i = 1, frm do
-		local n,r = max/frm, frm-i
-		n,r = math.ceil(r*n), math.ceil((r+1)*n)
+		local n, r = min+((mid/frm)*i), min+((mid/frm)*(i+1))
+		n, r = math.ceil(n), math.ceil(r)
 		
 		local new = self.obj.Checkpoint:Clone()
 		new.Visible = true
 		new.Size = UDim2.new(1, 0, 1/frm, 0)
 		new.Text = n
-		new.LayoutOrder = frm-i
+		new.LayoutOrder = i
 		new.Up:Remove()
+		new.Right:Remove()
 		new.Parent = self.obj.Index.Holder
 		
 		new = self.obj.Line:Clone()
 		new.Visible = true
 		new.BackgroundColor3 = ((i%2) == 0 and Color3.fromRGB(23, 42, 68)) or Color3.fromRGB(27, 49, 79)
-		new.LayoutOrder = frm-i
+		new.LayoutOrder = i
 		new.Parent = self.obj.Lines
 		
 		new.MouseEnter:Connect(function()
@@ -741,13 +959,16 @@ function graphRender(self, data, prefix, double, decimals)
 		end)
 	end
 	
-	self.obj.Time.UIGridLayout.CellSize = UDim2.new(1/#data, 0, 1, 0)
-	for i, v in next, data do
-		local new = self.obj.Checkpoint:Clone()
-		new.Visible = true
-		new.Text = tostring(i)..(prefix or "")
-		new.Right:Remove()
-		new.Parent = self.obj.Time
+	local Time = self.obj:FindFirstChild("Time")
+	if Time then
+	    UIGridLayout.CellSize = UDim2.new(1/#data, 0, 1, 0)
+	    for i, v in next, data do
+	    	local new = self.obj.Checkpoint:Clone()
+	    	new.Visible = true
+	    	new.Text = tostring(i)..(prefix or "")
+	    	new.Right:Remove()
+	    	new.Parent = self.obj.Time
+	    end
 	end
 	
 	if double == true then
@@ -775,7 +996,7 @@ function graphRender(self, data, prefix, double, decimals)
 	for i, v in next, data do
 		local new = Elements.Graph.Bar:Clone()
 		new.Visible = true
-		new.Size = UDim2.new(dec, pad, v/max, 0)
+		new.Size = UDim2.new(dec, pad, (v-min)/mid, 0)
 		new.Parent = self.obj.Holder
 		
 		local n = math.floor(v*decimals)/decimals
@@ -795,16 +1016,36 @@ function graphRender(self, data, prefix, double, decimals)
 	end
 end
 
-function newGraph(self, title, padding)
+function newGraph(self, title, data)
+    local ofs = (data.indexTime ~= false and 20) or 0
 	local new = Elements.Graph:Clone()
 	new.Top.Title.Text = title
-	new.Holder.UIListLayout.Padding = UDim.new(0, padding or 1)
+	new.Holder.Position = UDim2.new(0, data.indexXSize + 1, 0, 20)
+	new.Holder.Size = UDim2.new(1, -(data.indexXSize + 1), 1, ofs)
+	new.Lines.Position = UDim2.new(0, data.indexXSize + 1, 0, 0)
+	new.Lines.Size = UDim2.new(1, (-data.indexXSize - 2), 1, ofs)
+	new.Index.Size = UDim2.new(0, data.indexXSize, 1, -ofs)
+	new.Holder.UIListLayout.Padding = UDim.new(0, data.padding or 1)
 	new.Parent = self.holder
+	
+	if data.indexTime == false then
+	    new.Time:Remove()
+	else
+	    new.Time.Position = UDim2.new(0, data.indexXSize + 1, 1, 0)
+	end
 	
 	return {
 		obj = new,
 		render = graphRender
 	}
+end
+
+function newLabel(self, content)
+    local new = Elements.Label:Clone()
+    new.Text = content
+    new.Parent = self.holder
+    
+    return new
 end
 
 -- Constructor
