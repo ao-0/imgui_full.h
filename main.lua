@@ -1130,3 +1130,5 @@ function new(title, size, parent)
 		Tab = newTab
 	}
 end
+
+return {new=new, elements=Elements}
